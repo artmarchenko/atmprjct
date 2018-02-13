@@ -8,16 +8,16 @@
 
 namespace atm;
 
+include("../DbProperties.php");
 
-class dbConnector
+
+
+class dbConnector extends DbProperties
 {
 
-    private $server;
-
-    private $dbName;
-
-    private $user;
 
 
 
 }
+
+    
