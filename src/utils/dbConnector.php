@@ -8,6 +8,9 @@
 
 namespace atm;
 
+use Exception;
+use mysqli;
+
 include("../DbProperties.php");
 
 
@@ -16,8 +19,22 @@ class dbConnector extends DbProperties
 {
 
 
+    public function dbConnect()
+    {
+        $conn = new mysqli($this->server, $this->user, $this->password, $this->dbName);
 
+        if ($conn->connect_error) {
+
+            throw new Exception("Connection failed: ".$conn->connect_error);
+
+        }
+        else {
+
+            return $conn;
+        }
+    }
 
 }
+
 
     
