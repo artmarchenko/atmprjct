@@ -15,6 +15,8 @@ class Ticket
 
     private $ticketId;
 
+    private $voyageId;
+
     private $routeId;
 
     private $departureDate;
@@ -32,6 +34,7 @@ class Ticket
     /**
      * Ticket constructor.
      * @param $ticketId
+     * @param $voyageId
      * @param $routeId
      * @param $departureDate
      * @param $arrivalDate
@@ -40,9 +43,10 @@ class Ticket
      * @param $status
      * @param $price
      */
-    public function __construct($ticketId, $routeId, $departureDate, $arrivalDate, $passangerId, $seatNumber, $status, $price)
+    public function __construct($ticketId, $voyageId, $routeId, $departureDate, $arrivalDate, $passangerId, $seatNumber, $status, $price)
     {
         $this->ticketId = $ticketId;
+        $this->voyageId = $voyageId;
         $this->routeId = $routeId;
         $this->departureDate = $departureDate;
         $this->arrivalDate = $arrivalDate;
@@ -51,6 +55,7 @@ class Ticket
         $this->status = $status;
         $this->price = $price;
     }
+
 
     /**
      * @return mixed
@@ -67,6 +72,24 @@ class Ticket
     {
         $this->ticketId = $ticketId;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getVoyageId()
+    {
+        return $this->voyageId;
+    }
+
+    /**
+     * @param mixed $voyageId
+     */
+    public function setVoyageId($voyageId)
+    {
+        $this->voyageId = $voyageId;
+    }
+
+
 
     /**
      * @return mixed
